@@ -2,7 +2,7 @@ const CartWidget = () => {
   return (
     <>
       <div>
-        <span className="material-symbols-outlined">shopping_bag</span>
+        <span className="material-symbols-outlined">agriculture</span>
       </div>
     </>
   );

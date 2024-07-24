@@ -1,4 +1,4 @@
-.main-catalogue {
+/* .main-catalogue {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -7,4 +7,7 @@
     object-fit: contain;
     margin-top: 100px;
   
+  } */
+  .welcome {
+    height: 100vh;
   }

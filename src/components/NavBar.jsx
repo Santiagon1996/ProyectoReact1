@@ -1,6 +1,7 @@
 import CartWidget from "./CartWidget";
+import FormWidget from "./FormWidget";
 import miImagen from "../assets/logo-terra.png";
-
+import FondoNav from "../assets/fondo-tec.jpg";
 
 import {
   Container,
@@ -18,16 +19,21 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  // const { setCategory } = useCategory();
-  // const handleCategoryClick = (category) => {
-  //   setCategory(category);
-  // };
   return (
     <>
-      <Container maxW="100rem" bg="blue.600" color="white">
+      <Container
+        maxW="100rem"
+        bgImage={FondoNav}
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        bgSize="cover"
+        color="white"
+      >
         <Flex alignContent="center" gap="2">
           <Box p="2" color="white">
-            <Image boxSize="170px" src={miImagen} alt="Logo Terra" />
+            <Link to={"/"}>
+              <Image boxSize="170px" src={miImagen} alt="Logo Terra" />
+            </Link>
           </Box>
           <Spacer />
           <Box p="2" color="black">
@@ -35,7 +41,7 @@ const NavBar = () => {
               {({ isOpen }) => (
                 <>
                   <MenuButton
-                    bg="white"
+                    bg="#1C9F53"
                     isActive={isOpen}
                     as={Button}
                     rightIcon={<ChevronDownIcon />}
@@ -43,21 +49,17 @@ const NavBar = () => {
                     {isOpen ? "Close" : "Menu"}
                   </MenuButton>
                   <MenuList>
-                    <Link to="/">
-                      <MenuItem>
-                        All Categories
-                      </MenuItem>
+                    <Link to={"/catalogue"}>
+                      <MenuItem>Servicios con IA</MenuItem>
                     </Link>
                     <Link to="/category/1">
-                      <MenuItem>
-                        Category 1
-                      </MenuItem>
+                      <MenuItem>ChatBots</MenuItem>
                     </Link>
                     <Link to="/category/3">
-                      <MenuItem>Category 3</MenuItem>
+                      <MenuItem>Soluciones con IA</MenuItem>
                     </Link>
                     <Link to="/category/4">
-                      <MenuItem>Category 4</MenuItem>
+                      <MenuItem>Modelos Entrenados</MenuItem>
                     </Link>
                   </MenuList>
                 </>
@@ -65,8 +67,17 @@ const NavBar = () => {
             </Menu>
           </Box>
           <Box p="2" color="white">
-            <Button colorScheme="gray" variant="solid">
+            <Button bg="#1C9F53" colorScheme="gray" variant="solid">
+              <Link to={"/cart"}>
               <CartWidget />
+              </Link>
+            </Button>
+          </Box>
+          <Box p="2" color="white">
+            <Button bg="#1C9F53" colorScheme="gray" variant="solid">
+              <Link to={"/form"}>
+              <FormWidget />
+              </Link>
             </Button>
           </Box>
         </Flex>

@@ -11,6 +11,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import miImagen from '../assets/logo-terra.png';
+import FondoNav from "../assets/fondo-tec.jpg";
+
 
 import { BiFacebook, BiTwitter, BiInstagram, BiLinkedin } from "boxicons"; // Importa los íconos de Boxicons
 
@@ -18,7 +20,8 @@ const Footer = () => {
   return (
     <>
       <Box
-        bg="white"
+        bgImage={FondoNav}
+        
         _dark={{
           bg: "gray.600",
         }}
@@ -172,7 +175,6 @@ const Footer = () => {
           </Text>
         </VStack>
       </Box>
-      ;
     </>
   );
 };

@@ -54,6 +54,7 @@ import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -103,9 +104,9 @@ const ItemListContainer = () => {
   });
 
   return (
-    <div>
+    <div >
       <Center>
-        <Heading>Catálogo</Heading>
+        <Heading>Nuestras Tecnologias</Heading>
       </Center>
       <Select placeholder="Selecciona una categoría" onChange={handleCategoryChange}>
         {categories.map(category => (
